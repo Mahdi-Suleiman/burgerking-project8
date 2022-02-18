@@ -4,24 +4,24 @@
 body {
     color: #757575;
     background: #ffffff;
-    font-family: 'open sans', sans-serif;
+    font-family: "open sans", sans-serif;
 }
 
 h1,
-h2, 
-h3, 
+h2,
+h3,
 h4,
-h5, 
+h5,
 h6 {
     color: #454545;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 a {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 600;
     color: #fbaf32;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 a:hover,
@@ -34,14 +34,14 @@ a:focus {
 
 .btn.custom-btn {
     padding: 12px 25px;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
     background: #fbaf32;
     border: 2px solid #fbaf32;
     border-radius: 5px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn.custom-btn:hover {
@@ -56,7 +56,7 @@ a:focus {
 }
 
 .container-fluid {
-    max-width: 1366px;
+    max-width: 1800px;
 }
 
 .back-to-top {
@@ -84,19 +84,20 @@ a:focus {
     background: #719a0a;
 }
 
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
     font-size: inherit;
     margin-left: 0;
 }
-
 
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
 .navbar {
     position: relative;
-    transition: .5s;
+    transition: 0.5s;
     z-index: 999;
 }
 
@@ -104,7 +105,7 @@ a:focus {
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .navbar-brand {
@@ -113,9 +114,8 @@ a:focus {
     font-size: 45px;
     line-height: 0px;
     font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    transition: .5s;
-    
+    font-family: "Nunito", sans-serif;
+    transition: 0.5s;
 }
 
 .navbar .navbar-brand span {
@@ -150,16 +150,16 @@ a:focus {
         background: transparent !important;
         z-index: 9;
     }
-    
+
     .navbar.nav-sticky {
         padding: 10px 60px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #fbaf32;
     }
-    
+
     .navbar.nav-sticky .navbar-brand {
         color: #fbaf32;
     }
@@ -167,12 +167,12 @@ a:focus {
     .navbar-light .navbar-nav .nav-link,
     .navbar-light .navbar-nav .nav-link:focus {
         padding: 10px 10px 8px 10px;
-        font-family: 'Nunito', sans-serif;
+        font-family: "Nunito", sans-serif;
         color: #ffffff;
         font-size: 18px;
         font-weight: 600;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #666666;
@@ -182,36 +182,35 @@ a:focus {
     .navbar-light .navbar-nav .nav-link.active {
         color: #fbaf32;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #fbaf32;
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
         padding: 15px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #fbaf32;
     }
-    
+
     .navbar .navbar-nav {
         margin-top: 15px;
     }
-    
+
     .navbar a.nav-link {
         padding: 5px;
     }
-    
+
     .navbar .dropdown-menu {
         box-shadow: none;
     }
 }
-
 
 /*******************************/
 /********** Hero CSS ***********/
@@ -315,15 +314,15 @@ a:focus {
     .carousel .carousel-text {
         height: calc(100vh - 105px);
     }
-    
+
     .carousel .carousel-text h1 {
         font-size: 35px;
     }
-    
+
     .carousel .carousel-text p {
         font-size: 16px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 12px 30px;
         font-size: 15px;
@@ -337,11 +336,11 @@ a:focus {
     .carousel .carousel-text {
         height: calc(100vh - 70px);
     }
-    
+
     .carousel .carousel-text h1 {
         font-size: 30px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 10px 25px;
         font-size: 15px;
@@ -353,14 +352,13 @@ a:focus {
     .carousel .carousel-text h1 {
         font-size: 25px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 8px 20px;
         font-size: 14px;
         letter-spacing: 0;
     }
 }
-
 
 /*******************************/
 /******* Page Header CSS *******/
@@ -370,7 +368,8 @@ a:focus {
     margin-bottom: 45px;
     padding: 150px 0 90px 0;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/page-header.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../img/page-header.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -414,12 +413,11 @@ a:focus {
     .page-header h2 {
         font-size: 35px;
     }
-    
+
     .page-header a {
         font-size: 18px;
     }
 }
-
 
 /*******************************/
 /******* Section Header ********/
@@ -464,7 +462,6 @@ a:focus {
     }
 }
 
-
 /*******************************/
 /********* Booking CSS *********/
 /*******************************/
@@ -472,7 +469,7 @@ a:focus {
     position: relative;
     width: 100%;
     margin-bottom: 45px;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .booking .booking-content {
@@ -543,7 +540,6 @@ a:focus {
     background: transparent;
 }
 
-
 /*******************************/
 /********** Menu CSS ***********/
 /*******************************/
@@ -552,7 +548,7 @@ a:focus {
     width: 100%;
     padding: 90px 0 60px 0;
     margin: 45px 0;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .food .food-item {
@@ -563,8 +559,8 @@ a:focus {
     text-align: center;
     background: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-    transition: .3s;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
 }
 
 .food .food-item:hover {
@@ -578,7 +574,7 @@ a:focus {
     font-size: 60px;
     line-height: 60px;
     margin-bottom: 20px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .food .food-item:hover i {
@@ -596,7 +592,7 @@ a:focus {
     border-right: transparent;
     border-bottom: transparent;
     border-radius: 100px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .food .food-item:hover i::after {
@@ -623,7 +619,7 @@ a:focus {
     bottom: 0;
     left: calc(50% - 25px);
     background: #fbaf32;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .food .food-item a:hover::after {
@@ -631,8 +627,6 @@ a:focus {
     left: 0;
     background: #719a0a;
 }
-
-
 
 /*******************************/
 /********** About CSS **********/
@@ -724,14 +718,14 @@ a:focus {
 }
 
 @keyframes pulse-border {
-  0% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-    opacity: 0;
-  }
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
 }
 
 #videoModal {
@@ -782,7 +776,6 @@ a:focus {
     }
 }
 
-
 /*******************************/
 /********* Feature CSS *********/
 /*******************************/
@@ -815,7 +808,7 @@ a:focus {
 
 .feature .feature-img img {
     width: 100%;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .feature .feature-img img:hover {
@@ -861,7 +854,6 @@ a:focus {
     font-size: 22px;
     font-weight: 700;
 }
-
 
 /*******************************/
 /*********** Menu CSS **********/
@@ -963,7 +955,7 @@ a:focus {
     display: block;
 }
 
-@media(max-width: 575.98px) {
+@media (max-width: 575.98px) {
     .menu .menu-text p,
     .menu .menu-text h3,
     .menu .menu-text h3 span,
@@ -973,21 +965,20 @@ a:focus {
         padding: 0;
         margin: 0;
     }
-    
+
     .menu .menu-text h3 {
         font-size: 18px;
         margin-bottom: 0;
     }
-    
+
     .menu .menu-text h3 span {
         margin-bottom: 3px;
     }
-    
+
     .menu .menu-text h3::after {
         display: none;
     }
 }
-
 
 /*******************************/
 /*********** Team CSS **********/
@@ -1015,7 +1006,7 @@ a:focus {
     width: 100%;
     margin-top: 15px;
     transform: scale(1.1);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .team .team-item:hover img {
@@ -1032,7 +1023,7 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .team .team-social a {
@@ -1057,31 +1048,31 @@ a:focus {
 }
 
 .team .team-item:hover .team-social {
-    background: rgba(256, 256, 256, .5);
+    background: rgba(256, 256, 256, 0.5);
 }
 
 .team .team-item:hover .team-social a:first-child {
     opacity: 1;
     margin-top: 0;
-    transition: .3s 0s;
+    transition: 0.3s 0s;
 }
 
 .team .team-item:hover .team-social a:nth-child(2) {
     opacity: 1;
     margin-top: 0;
-    transition: .3s .1s;
+    transition: 0.3s 0.1s;
 }
 
 .team .team-item:hover .team-social a:nth-child(3) {
     opacity: 1;
     margin-top: 0;
-    transition: .3s .2s;
+    transition: 0.3s 0.2s;
 }
 
 .team .team-item:hover .team-social a:nth-child(4) {
     opacity: 1;
     margin-top: 0;
-    transition: .3s .3s;
+    transition: 0.3s 0.3s;
 }
 
 .team .team-text {
@@ -1089,7 +1080,7 @@ a:focus {
     padding: 25px 15px;
     text-align: center;
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, .07);
+    border: 1px solid rgba(0, 0, 0, 0.07);
     border-top: none;
     border-radius: 0 0 15px 15px;
 }
@@ -1104,7 +1095,6 @@ a:focus {
     font-size: 16px;
 }
 
-
 /*******************************/
 /******* Testimonial CSS *******/
 /*******************************/
@@ -1113,7 +1103,7 @@ a:focus {
     width: 100%;
     padding: 90px 0;
     margin: 45px 0;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .testimonial .testimonials-carousel {
@@ -1132,8 +1122,8 @@ a:focus {
     flex-direction: column;
     background: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .08);
-    transition: .3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
     overflow: hidden;
 }
 
@@ -1191,7 +1181,6 @@ a:focus {
     background: #719a0a;
 }
 
-
 /*******************************/
 /*********** Blog CSS **********/
 /*******************************/
@@ -1224,7 +1213,7 @@ a:focus {
     left: 30px;
     padding: 25px 30px 30px 30px;
     background: #ffffff;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     z-index: 2;
 }
@@ -1286,14 +1275,13 @@ a:focus {
     color: #999999;
 }
 
-@media(max-width: 575.98px){
+@media (max-width: 575.98px) {
     .blog .blog-meta p {
         flex: 50%;
         font-size: 13px;
         margin: 0 0 5px 0;
     }
 }
-
 
 /*******************************/
 /******* Single Post CSS *******/
@@ -1339,7 +1327,7 @@ a:focus {
 .single .single-bio {
     margin-bottom: 45px;
     padding: 30px;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
     display: flex;
 }
 
@@ -1456,7 +1444,7 @@ a:focus {
     color: #ffffff;
     background: #fbaf32;
     font-size: 16px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .single .related-slider .owl-nav .owl-prev:hover,
@@ -1553,7 +1541,6 @@ a:focus {
     border-radius: 5px;
 }
 
-
 /**********************************/
 /*********** Sidebar CSS **********/
 /**********************************/
@@ -1562,7 +1549,7 @@ a:focus {
     width: 100%;
 }
 
-@media(max-width: 991.98px) {
+@media (max-width: 991.98px) {
     .sidebar {
         margin-top: 45px;
     }
@@ -1616,7 +1603,7 @@ a:focus {
     background: none;
     border-radius: 0;
     border: none;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .sidebar .search-widget .btn:hover {
@@ -1663,11 +1650,11 @@ a:focus {
 }
 
 .sidebar .category-widget ul li {
-    margin: 0 0 12px 22px; 
+    margin: 0 0 12px 22px;
 }
 
 .sidebar .category-widget ul li:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .sidebar .category-widget ul li a {
@@ -1677,8 +1664,8 @@ a:focus {
 
 .sidebar .category-widget ul li::before {
     position: absolute;
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: #fbaf32;
     left: 1px;
@@ -1719,13 +1706,12 @@ a:focus {
 
 .sidebar .image-widget img {
     max-width: 100%;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .sidebar .image-widget img:hover {
     transform: scale(1.1);
 }
-
 
 /*******************************/
 /********* Contact CSS *********/
@@ -1740,7 +1726,7 @@ a:focus {
     min-height: 150px;
     margin: 0 0 30px 0;
     padding: 30px 15px 0 15px;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .contact .contact-info {
@@ -1807,7 +1793,7 @@ a:focus {
     padding: 15px;
     background: none;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .contact .contact-form textarea {
@@ -1815,7 +1801,7 @@ a:focus {
     padding: 8px 15px;
     background: none;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .contact .help-block ul {
@@ -1824,7 +1810,6 @@ a:focus {
     list-style-type: none;
 }
 
-
 /*******************************/
 /********* Footer CSS **********/
 /*******************************/
@@ -1832,7 +1817,7 @@ a:focus {
     position: relative;
     margin-top: 45px;
     padding-top: 90px;
-    background: rgba(0, 0, 0, .04);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .footer .footer-contact,
@@ -1870,7 +1855,7 @@ a:focus {
     display: block;
     margin-bottom: 10px;
     color: #454545;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .footer .footer-link a::before {

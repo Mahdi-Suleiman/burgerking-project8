@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Register</h2>
+            </div>
+            <div class="col-12">
+                <a href="{{ url('/') }}">Home</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

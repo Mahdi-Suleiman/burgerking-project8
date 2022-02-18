@@ -14,8 +14,7 @@
                                 Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="{{ url('/booking') }}">Book Table</a>
                             </div>
                         </div>
                     </div>
@@ -29,8 +28,7 @@
                                 Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="{{ url('/booking') }}">Book Table</a>
                             </div>
                         </div>
                     </div>
@@ -44,8 +42,7 @@
                                 Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="{{ url('/booking') }}">Book Table</a>
                             </div>
                         </div>
                     </div>
@@ -750,7 +747,7 @@
 
 
         <!-- Blog Start -->
-        <div class="blog">
+        {{-- <div class="blog">
             <div class="container">
                 <div class="section-header text-center">
                     <p>Food Blog</p>
@@ -803,7 +800,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Blog End -->
 
 

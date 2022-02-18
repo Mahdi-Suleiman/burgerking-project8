@@ -20,7 +20,21 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
-
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/feature', function () {
+    return view('feature');
+});
+Route::get('/chef', function () {
+    return view('chef');
+});
+Route::get('/contact', function () {
+    return view('contact-us');
+});
+Route::get('/booking', function () {
+    return view('book');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

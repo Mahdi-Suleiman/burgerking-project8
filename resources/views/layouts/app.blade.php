@@ -57,13 +57,13 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="feature.html" class="nav-item nav-link">Feature</a>
-                        <a href="team.html" class="nav-item nav-link">Chef</a>
-                        <a href="booking.html" class="nav-item nav-link">Booking</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ url('/about-us') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ url('/feature') }}" class="nav-item nav-link">Feature</a>
+                        <a href="{{ url('/chef') }}" class="nav-item nav-link">Chef</a>
+                        <a href="{{ url('/booking') }}" class="nav-item nav-link">Booking</a>
 
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
 
                         @guest
                             @if (Route::has('login'))
@@ -74,6 +74,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
+                        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -153,6 +154,7 @@
             </div>
         </div>
     </div>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     </div>
 
@@ -166,8 +168,8 @@
         <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
         <!-- Contact Javascript File -->
-        <script src="{{asset('mail/jqBootstrapValidation.min.js')}}"></script>
-        <script src="{{asset('mail/contact.js')}}"></script>
+        {{-- <script src="{{asset('mail/jqBootstrapValidation.min.js')}}"></script> --}}
+        {{-- <script src="{{asset('mail/contact.js')}}"></script> --}}
 
         <!-- Template Javascript -->
         <script src="{{asset('js/main.js')}}"></script>
