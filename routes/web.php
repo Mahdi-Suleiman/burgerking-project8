@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\IndexController;
+use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ContactController;
@@ -45,8 +46,16 @@ Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::cla
 
 
 Route::middleware(['IsAdmin'])->group(function () {
-    Route::get('/admin/dashboard', [IndexController::class, 'index']);
+    Route::get('/admin/dashboard', [IndexController::class, 'index'])->name('admin.index');
     Route::delete('/admin/dashboard/{userId}/destroy/{pivotId}', [IndexController::class, 'destroy'])->name('index.destroy');
-
     Route::put('/admin/dashboard/{userId}/update/{pivotId}', [IndexController::class, 'update'])->name('index.update');
+
+    Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/admin/users/add', [UserController::class, 'create'])->name('admin.users.add');
+    Route::post('/admin/users/add', [UserController::class, 'store'])->name('admin.users.store');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.destroy');
+
+    Route::get('/admin/users/{id}', [UserController::class, 'edit'])->name('admin.user.edit');
+
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.user.update');
 });

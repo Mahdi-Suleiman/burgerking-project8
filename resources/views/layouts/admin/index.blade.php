@@ -62,7 +62,7 @@
                                 <td>
                                     {{-- <form action="{{route('index.destroy',$table->pivot->user_id, $table->pivot->id)}}" method="post"> --}}
                                         {{-- <form action="{{route('index.destroy',['userId' => $table->pivot->user_id,'pivotId' => $table->pivot->id])}}" method="post"> --}}
-                                    <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/destroy/' . $table->pivot->id)}}" method="post">
+                                    <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/destroy/' . $table->pivot->id)}}" method="post" onsubmit="return confirm('are you sure ?')">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
