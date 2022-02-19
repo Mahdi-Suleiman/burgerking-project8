@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('mobile_number');
             $table->integer('guest_number');
             $table->dateTime('datetime');
+            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+
             $table->timestamps();
         });
     }
