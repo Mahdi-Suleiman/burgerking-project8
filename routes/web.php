@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::get('/about-us', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact-us',[App\Http\Controllers\ContactController::class,'index']);
+
+Route::post('/contact-us-store',[App\Http\Controllers\ContactController::class,'store'])->name('contact-us');
