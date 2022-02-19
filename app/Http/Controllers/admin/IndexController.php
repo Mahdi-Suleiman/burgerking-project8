@@ -22,8 +22,8 @@ class IndexController extends Controller
         // $users = User::all()->where('role', 'user')->with('user.table');
         // dd($users->tables->first());
         // dd($users);
-        $table = Table::create(['']);
-        $table->users()->attach('1', ['user_id' => '1', 'table_id' => '1', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
+        // $table = Table::create(['']);
+        // $table->users()->attach('1', ['user_id' => '1', 'table_id' => '1', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
 
         $users = User::with('tables')->where('role', 'user')->get();
         return view('layouts.admin.index', compact('users'));

@@ -97,9 +97,9 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input id="mobile_number" type="text" name="mobile_number"
+                                        {{-- <input id="mobile_number" type="text" name="mobile_number"
                                          value=" {{Auth::user()->tables->pivot->mobile_number}}"
-                                         >
+                                         > --}}
 
                                     </div>
                                 </div>
