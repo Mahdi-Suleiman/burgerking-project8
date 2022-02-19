@@ -19,6 +19,7 @@ class Table extends Model
     }
     protected $fillable = [
         'id',
-        'reserved'
+        'number',
+        'reserved',
     ];
 }

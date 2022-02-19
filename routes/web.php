@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\IndexController;
+use App\Http\Controllers\admin\TableController;
 use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -56,4 +57,12 @@ Route::middleware(['IsAdmin'])->group(function () {
     Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
     Route::get('/admin/users/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
     Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
+
+    Route::get('/admin/tables', [TableController::class, 'index'])->name('admin.tables');
+    Route::get('/admin/tables/add', [TableController::class, 'create'])->name('admin.tables.add');
+    Route::post('/admin/tables/add', [TableController::class, 'store'])->name('admin.tables.store');
+    Route::delete('/admin/tables/{id}', [TableController::class, 'destroy'])->name('admin.tables.destroy');
+    Route::put('/admin/tables/{id}', [TableController::class, 'update'])->name('admin.tables.update');
+    Route::get('/admin/tables/edit/{id}', [TableController::class, 'edit'])->name('admin.tables.edit');
+    Route::put('/admin/tables/edit/{id}', [TableController::class, 'update'])->name('admin.tables.update');
 });

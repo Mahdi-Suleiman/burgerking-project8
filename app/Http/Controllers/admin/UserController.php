@@ -59,7 +59,7 @@ class UserController extends Controller
             'password' => $password,
             'mobile_number' => $request->mobile_number
         ]);
-        return redirect()->back()->with(['message' => 'add was successful']);
+        return redirect()->back()->with(['message' => 'User added successfully']);
     }
 
     /**

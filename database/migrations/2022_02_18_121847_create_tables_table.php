@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
-            $table->boolean('reserved')->default(false);
+            // $table->boolean('reserved')->default(false);
+            $table->unsignedBigInteger('number');
+            $table->enum('reserved', ['reserved', 'not reserved'])->default('not reserved');
             $table->timestamps();
         });
     }
