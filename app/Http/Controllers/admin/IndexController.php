@@ -22,11 +22,21 @@ class IndexController extends Controller
         // $users = User::all()->where('role', 'user')->with('user.table');
         // dd($users->tables->first());
         // dd($users);
-        // $table = Table::create(['']);
-        // $table->users()->attach('1', ['user_id' => '1', 'table_id' => '1', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
 
+
+        // $user = $users->find(2);
+        // dd($user);
+
+        // $allStatus = $user->tables()->pluck('status');
+        // dd($allStatus);
+
+
+        // $table = Table::create(['']);
+        // $table->users()->attach('1', ['user_id' => '2', 'table_id' => '1', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
         $users = User::with('tables')->where('role', 'user')->get();
-        return view('layouts.admin.index', compact('users'));
+        $allStatus = ['pending', 'accepted', 'rejected'];
+        // dd($allStatus);
+        return view('layouts.admin.index', compact('users', 'allStatus'));
     }
 
     /**
@@ -48,6 +58,7 @@ class IndexController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -79,9 +90,31 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $userId, $pivotId)
     {
         //
+        // dd($request->mobile_number);
+        $users = User::with('tables')->where('role', 'user')->get();
+        $user = $users->find($userId);
+        // $user->tables()->wherePivot('id', '=', $pivotId)->attach($pivotId, [
+        //     "user_id" => $request->user_id,
+        //     "table_id" => $request->table_id,
+        //     "mobile_number" => $request->mobile_number,
+        //     "guest_number" => $request->guest_number,
+        //     "status" => $request->status,
+        //     "datetime" => $request->datetime
+        // ]);
+        $user->tables()->wherePivot('id', '=', $pivotId)->updateExistingPivot($request->table_id, [
+            "user_id" => $request->user_id,
+            "table_id" => $request->table_id,
+            "mobile_number" => $request->mobile_number,
+            "guest_number" => $request->guest_number,
+            "status" => $request->status,
+            "datetime" => $request->datetime
+        ]);
+        // $user->tables()->wherePivot('id', '=', $pivotId)->detach();
+
+        return redirect()->back();
     }
 
     /**
@@ -90,7 +123,7 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($userId, $pivotId)
     {
         //
         // dd($id);
@@ -100,9 +133,10 @@ class IndexController extends Controller
         // $users->tables()->wherePivot('id', '=', $id)->delete();
         // $users->tables()->detach($id);
         // $users->deleteOrFail()
+        // dd($pivotId);
         $users = User::with('tables')->where('role', 'user')->get();
-        $user = $users->find(1);
-        $user->tables()->wherePivot('id', '=', $id)->detach();
+        $user = $users->find($userId);
+        $user->tables()->wherePivot('id', '=', $pivotId)->detach();
         return redirect()->back();
         // $visits->products()->wherePivot('product_id', '=', $product_id)->detach();
     }

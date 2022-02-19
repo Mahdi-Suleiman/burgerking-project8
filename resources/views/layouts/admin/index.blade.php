@@ -16,35 +16,55 @@
                         <th scope="col">Mobile Number</th>
                         <th scope="col">Guest Number</th>
                         <th scope="col">Date time</th>
+                        <th scope="col">status</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         @foreach ($user->tables as $table )
                             <tr>
-                                {{-- <td><input class="form-check-input" type="checkbox"></td> --}}
-                                {{-- <td>01 Jan 2045</td> --}}
-                                {{-- {{dd($table->pivot)}} --}}
-                                {{-- {{$table->pivot->mobile_number}} --}}
-                                {{-- {{dd($user->tables->user_id)}} --}}
-                                {{-- <td>{{$user->tables->id}}</td> --}}
                                 <td>{{$user->name}}</td>
-                                {{-- <td>{{$table->pivot->user_id}}</td> --}}
                                 <td>
-
                                     <a href="mailto:{{$user->email}}">{{$user->email}}</a>
                                 </td>
                                 <td>{{$table->pivot->table_id}}</td>
                                 <td>{{$table->pivot->mobile_number}}</td>
                                 <td>{{$table->pivot->guest_number}}</td>
                                 <td>{{$table->pivot->datetime}}</td>
-                                {{-- {{dd($table->pivot->id)}} --}}
                                 <td>
-                                    <form action="{{route('index.destroy',$table->pivot->id)}}" method="post">
+                                    {{-- <form action="{{route('index.store',$table->pivot->id)}}" method="post"> --}}
+                                    <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/update/' . $table->pivot->id)}}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <select class="form-select" name="status" onchange="this.form.submit()">
+                                            <option value="{{$table->pivot->status}}">{{$table->pivot->status}}</option>
+
+                                            @foreach ($allStatus as $status)
+                                                @if ($status == $table->pivot->status )
+                                                    @php
+                                                        continue
+                                                    @endphp
+                                                @endif
+                                            <option value="{{$status}}">{{$status}}</option>
+                                            @endforeach
+
+                                        </select>
+
+                                        <input type="hidden" name="user_id" value="{{$table->pivot->user_id}}">
+                                        <input type="hidden" name="table_id" value="{{$table->pivot->table_id}}">
+                                        <input type="hidden" name="mobile_number" value="{{$table->pivot->mobile_number}}">
+                                        <input type="hidden" name="guest_number" value="{{$table->pivot->guest_number}}">
+                                        <input type="hidden" name="datetime" value="{{$table->pivot->datetime}}">
+
+                                    </form>
+                                </td>
+
+                                <td>
+                                    {{-- <form action="{{route('index.destroy',$table->pivot->user_id, $table->pivot->id)}}" method="post"> --}}
+                                        {{-- <form action="{{route('index.destroy',['userId' => $table->pivot->user_id,'pivotId' => $table->pivot->id])}}" method="post"> --}}
+                                    <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/destroy/' . $table->pivot->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    {{-- <a class="btn btn-sm btn-primary" href="">Detail</a> --}}
-                                    {{-- <input class="btn btn-sm btn-danger" value="Delete"> --}}
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                                 </td>

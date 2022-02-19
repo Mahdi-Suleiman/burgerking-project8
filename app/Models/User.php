@@ -19,7 +19,8 @@ class User extends Authenticatable
             ->withPivot('id')
             ->withPivot('mobile_number')
             ->withPivot('guest_number')
-            ->withPivot('datetime');
+            ->withPivot('datetime')
+            ->withPivot('status');
     }
     public function users()
     {
@@ -38,7 +39,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'id',
+        'mobile_number',
+        'guest_number',
+        'status',
     ];
 
     /**

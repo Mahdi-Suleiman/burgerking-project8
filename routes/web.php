@@ -46,5 +46,7 @@ Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::cla
 
 Route::middleware(['IsAdmin'])->group(function () {
     Route::get('/admin/dashboard', [IndexController::class, 'index']);
-    Route::delete('/admin/dashboard/{id}', [IndexController::class, 'destroy'])->name('index.destroy');
+    Route::delete('/admin/dashboard/{userId}/destroy/{pivotId}', [IndexController::class, 'destroy'])->name('index.destroy');
+
+    Route::put('/admin/dashboard/{userId}/update/{pivotId}', [IndexController::class, 'update'])->name('index.update');
 });

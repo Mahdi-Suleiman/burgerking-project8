@@ -14,9 +14,11 @@ class Table extends Model
             ->withPivot('id')
             ->withPivot('mobile_number')
             ->withPivot('guest_number')
-            ->withPivot('datetime');
+            ->withPivot('datetime')
+            ->withPivot('status');
     }
     protected $fillable = [
         'id',
+        'reserved'
     ];
 }
