@@ -20,7 +20,13 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
+// Route::get('/user-profile', function () {
+//     return view('user-profile');
+// });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user-profile', [App\Http\Controllers\ProfileController::class, 'profile']);
+Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
+
