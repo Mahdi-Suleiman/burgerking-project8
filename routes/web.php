@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,15 @@ Route::get('/about-us', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['IsAdmin'])->group(function () {
+    // Route::get('/admin/dashboard', function () {
+    //     return view('layouts.admin.index');
+    // });
+    Route::get('/admin/dashboard', [IndexController::class, 'index']);
+    Route::delete('/admin/dashboard/{id}', [IndexController::class, 'destroy'])->name('index.destroy');
+});
+
+// Route::get('/admin/dashboard', function () {
+//     return view('layouts.admin.index');
+// });

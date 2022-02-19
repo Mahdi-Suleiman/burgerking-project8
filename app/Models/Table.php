@@ -10,6 +10,13 @@ class Table extends Model
     use HasFactory;
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'table_user')
+            ->withPivot('id')
+            ->withPivot('mobile_number')
+            ->withPivot('guest_number')
+            ->withPivot('datetime');
     }
+    protected $fillable = [
+        'id',
+    ];
 }
