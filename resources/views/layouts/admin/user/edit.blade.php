@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <form action="{{route('admin.user.update', $user)}}" method="POST">
+                    <form action="{{route('admin.users.update', $user)}}" method="POST">
                         @csrf
                         @method('put')
                         <tr>

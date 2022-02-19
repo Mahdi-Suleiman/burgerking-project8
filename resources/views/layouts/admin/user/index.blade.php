@@ -26,14 +26,14 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->mobile_number}}</td>
                         <td>
-                            <form action="{{route('admin.user.edit', $user)}}" method="get">
+                            <form action="{{route('admin.users.edit', $user)}}" method="get">
                                 @csrf
                                 @method('get')
                                 <input type="submit" class="btn btn-success" value="Edit">
                             </form>
                         </td>
                         <td>
-                            <form action="{{route('admin.destroy', $user->id)}}" method="post" onsubmit="return confirm('are you sure ?')">
+                            <form action="{{route('admin.users.destroy', $user->id)}}" method="post" onsubmit="return confirm('are you sure ?')">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Delete">

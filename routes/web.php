@@ -53,9 +53,7 @@ Route::middleware(['IsAdmin'])->group(function () {
     Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
     Route::get('/admin/users/add', [UserController::class, 'create'])->name('admin.users.add');
     Route::post('/admin/users/add', [UserController::class, 'store'])->name('admin.users.store');
-    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.destroy');
-
-    Route::get('/admin/users/{id}', [UserController::class, 'edit'])->name('admin.user.edit');
-
-    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.user.update');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    Route::get('/admin/users/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
 });
