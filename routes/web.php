@@ -21,9 +21,7 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
-Route::get('/profile', function () {
-    return view('profile');
-});
+
 Route::get('/feature', function () {
     return view('feature');
 });
@@ -37,6 +35,9 @@ Route::get('/booking', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 Route::post('/contact-us-store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact-us');
+
+Route::get('/user-profile', [App\Http\Controllers\ProfileController::class, 'profile']);
+Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
