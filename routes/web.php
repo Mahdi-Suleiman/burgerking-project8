@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ContactController;
@@ -41,3 +42,9 @@ Route::post('/contact-us-store', [App\Http\Controllers\ContactController::class,
 
 Route::get('/user-profile', [App\Http\Controllers\ProfileController::class, 'profile']);
 Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
+
+
+Route::middleware(['IsAdmin'])->group(function () {
+    Route::get('/admin/dashboard', [IndexController::class, 'index']);
+    Route::delete('/admin/dashboard/{id}', [IndexController::class, 'destroy'])->name('index.destroy');
+});

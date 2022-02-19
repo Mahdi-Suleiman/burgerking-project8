@@ -15,7 +15,11 @@ class User extends Authenticatable
 
     public function tables()
     {
-        return $this->belongsToMany(Table::class);
+        return $this->belongsToMany(Table::class, 'table_user')
+            ->withPivot('id')
+            ->withPivot('mobile_number')
+            ->withPivot('guest_number')
+            ->withPivot('datetime');
     }
     public function users()
     {
