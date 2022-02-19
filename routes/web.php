@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,13 @@ Route::get('/feature', function () {
 Route::get('/chef', function () {
     return view('chef');
 });
-Route::get('/contact', function () {
-    return view('contact-us');
-});
+
 Route::get('/booking', function () {
     return view('book');
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
+
+Route::post('/contact-us-store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact-us');
