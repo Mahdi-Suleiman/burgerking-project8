@@ -18,8 +18,10 @@ class TableController extends Controller
     {
         $user_id=Auth::user()->id;
         $user=User::find($user_id);
-       // dd($user);
-       return view('book',compact('user'));
+
+       $tables=Table::where('reserved','not reserved')->get();
+    //    dd($tables);
+       return view('book',compact('user','tables'));
     }
 
     /**
@@ -40,12 +42,15 @@ class TableController extends Controller
      */
     public function store(Request $request )
     {
-
-
-
+      $table=Table::find($request->number);
       $id=Auth::user()->id;
       $table->users()->attach(
-       $id,['mobile_number'=> $request->mobile_number,'guest_number'=>$request->guest_number,'time'=>$request->time,'date'=>$request->date, 'status'=>$request->status]);
+       $id,['mobile_number'=> $request->mobile_number,'guest_number'=>$request->guest_number,'time'=>$request->time,'date'=>$request->date ]);
+       $request->flash();
+       session()->flash('success', 'Thank you ..you can check your profile to know your resrvatin status.');
+   return redirect()->back();
+
+
     }
 
     /**

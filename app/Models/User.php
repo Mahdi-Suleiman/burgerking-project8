@@ -19,21 +19,12 @@ class User extends Authenticatable
             ->withPivot('id')
             ->withPivot('mobile_number')
             ->withPivot('guest_number')
-            ->withPivot('datetime')
-            // ->withPivot('date')
-            // ->withPivot('time')
-            ->withPivot('status');
-    }
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'table_user')
-            ->withPivot('id')
-            ->withPivot('mobile_number')
-            ->withPivot('guest_number')
+            // ->withPivot('datetime')
             ->withPivot('date')
             ->withPivot('time')
             ->withPivot('status');
     }
+
     /**
      * The attributes that are mass assignable.
      *

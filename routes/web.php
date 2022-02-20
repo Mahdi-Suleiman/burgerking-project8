@@ -32,9 +32,9 @@ Route::get('/chef', function () {
     return view('chef');
 });
 
-Route::get('/booking', function () {
-    return view('book');
-});
+// Route::get('/booking', function () {
+//     return view('book');
+// });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

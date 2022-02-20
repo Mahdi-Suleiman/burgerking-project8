@@ -108,11 +108,11 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-md-6">
-                                        @foreach($user->tables as $table)
+
                                        <input id="mobile_number" type="text" name="mobile_number"
-                                         value=" {{$table->pivot->mobile_number}}"
+                                         value=" {{$user->mobile_number}}"
                                          >
-                                      @endforeach
+
 
 
                                     </div>
@@ -125,7 +125,7 @@
                                         <input id="form_password" type="text" name="password"
                                         {{-- value="{{Auth::user()->password}}
                                         " --}}
-                                         required>
+                                         >
                                     </div>
                                 </div>
                     </div>
@@ -136,8 +136,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         @foreach($user->tables as $table)
-
-                                          <p> {{$table->pivot->table_id}}
+                                        {{-- {{ dd($table->id) }} --}}
+                                          <p> {{$table->number}}
                                           </p>
                                        @endforeach
                                     </div>
