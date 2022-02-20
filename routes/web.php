@@ -45,6 +45,8 @@ Route::post('/contact-us-store', [App\Http\Controllers\ContactController::class,
 Route::get('/user-profile', [App\Http\Controllers\ProfileController::class, 'profile']);
 Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
 
+Route::get('/book', [App\Http\Controllers\TableController::class, 'index']);
+Route::post('/book', [App\Http\Controllers\TableController::class, 'store'])->name('book.store');
 
 Route::middleware(['IsAdmin'])->group(function () {
     Route::get('/admin/dashboard', [IndexController::class, 'index'])->name('admin.index');

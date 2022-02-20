@@ -39,26 +39,30 @@
             </div>
             <div class="col-lg-5">
                 <div class="booking-form">
-                    <form>
+                    <form  method="post" action="{{route('book.store',) }}"
+                        >
+                        @csrf
+
+
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
+                                <input type="text" class="form-control" placeholder="Name" required="required" name="name" {value="{{Auth::user()->name}}"} />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-user"></i></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="control-group">
+                        {{-- <div class="control-group">
                             <div class="input-group">
                                 <input type="email" class="form-control" placeholder="Email" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-envelope"></i></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Mobile" required="required" />
+                                <input type="text" class="form-control" placeholder="Mobile"  name="mobile_number"required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
                                 </div>
@@ -66,7 +70,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder="Date" name="date" data-target="#date" data-toggle="datetimepicker"/>
                                 <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
@@ -74,7 +78,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group time" id="time" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder="Time" name="time" data-target="#time" data-toggle="datetimepicker"/>
                                 <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>
@@ -82,7 +86,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <select class="custom-select form-control">
+                                <select class="custom-select form-control" name="guest_number">
                                     <option selected>Guest</option>
                                     <option value="1">1 Guest</option>
                                     <option value="2">2 Guest</option>

@@ -16,6 +16,9 @@ class Table extends Model
             ->withPivot('guest_number')
             ->withPivot('datetime')
             ->withPivot('status');
+            // ->withPivot('date')
+            // ->withPivot('time')
+        ;
     }
     protected $fillable = [
         'id',

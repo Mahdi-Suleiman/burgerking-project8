@@ -1,9 +1,13 @@
 /* body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 } */
+.alert-success {
+    width: 45%;
+    padding-bottom: 1em;
+}
 .emp-profile {
-    padding: 3%;
-    margin-top: 3%;
+    padding: 1%;
+    margin-top: 1%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
@@ -32,7 +36,18 @@
     top: 0;
 }
 .profile-head h5 {
-    color: #333;
+    font-weight: bold;
+    color: #719a0a;
+    margin-bottom: 2em;
+}
+.profile-heading {
+    color: #719a0a;
+    margin: 1em;
+}
+input {
+    color: #719a0a;
+    padding: 0.5em;
+    border: 1px solid #719a0a;
 }
 .profile-head h6 {
     color: #fbaf32;
@@ -43,7 +58,8 @@
     width: 70%;
     padding: 2%;
     font-weight: 600;
-    color: #6c757d;
+    color: #fbaf32;
+    background-color: #719a0a;
     cursor: pointer;
 }
 .proile-rating {
@@ -66,7 +82,7 @@
 }
 .profile-head .nav-tabs .nav-link.active {
     border: none;
-    border-bottom: 2px solid #23af1e !important;
+    border-bottom: 2px solid #719a0a !important;
 }
 .profile-work {
     padding: 14%;

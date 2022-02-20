@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Table;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TableController extends Controller
 {
@@ -14,7 +16,10 @@ class TableController extends Controller
      */
     public function index()
     {
-        //
+        $user_id=Auth::user()->id;
+        $user=User::find($user_id);
+       // dd($user);
+       return view('book',compact('user'));
     }
 
     /**
@@ -33,9 +38,14 @@ class TableController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        //
+
+
+
+      $id=Auth::user()->id;
+      $table->users()->attach(
+       $id,['mobile_number'=> $request->mobile_number,'guest_number'=>$request->guest_number,'time'=>$request->time,'date'=>$request->date, 'status'=>$request->status]);
     }
 
     /**
