@@ -19,8 +19,7 @@ class TableController extends Controller
         $user_id=Auth::user()->id;
         $user=User::find($user_id);
 
-       $tables=Table::where('reserved','not reserved')->get();
-    //    dd($tables);
+       $tables=Table::all();
        return view('book',compact('user','tables'));
     }
 

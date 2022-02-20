@@ -24,6 +24,9 @@ return new class extends Migration
             $table->integer('guest_number');
             $table->string('date') ;
             $table->string('time') ;
+            $table->text('note') ;
+
+
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
 
             $table->timestamps();

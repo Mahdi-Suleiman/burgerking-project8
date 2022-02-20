@@ -14,10 +14,11 @@ class Table extends Model
             ->withPivot('id')
             ->withPivot('mobile_number')
             ->withPivot('guest_number')
-            ->withPivot('datetime')
-            ->withPivot('status');
-            // ->withPivot('date')
-            // ->withPivot('time')
+
+            ->withPivot('status')
+            ->withPivot('date')
+            ->withPivot('time')
+            ->withPivot('note')
         ;
     }
     protected $fillable = [

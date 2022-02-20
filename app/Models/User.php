@@ -16,13 +16,14 @@ class User extends Authenticatable
     public function tables()
     {
         return $this->belongsToMany(Table::class, 'table_user')
-            ->withPivot('id')
-            ->withPivot('mobile_number')
-            ->withPivot('guest_number')
-            // ->withPivot('datetime')
-            ->withPivot('date')
-            ->withPivot('time')
-            ->withPivot('status');
+        ->withPivot('id')
+        ->withPivot('mobile_number')
+        ->withPivot('guest_number')
+
+        ->withPivot('status')
+        ->withPivot('date')
+        ->withPivot('time')
+        ->withPivot('note');
     }
 
     /**
