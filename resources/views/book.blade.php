@@ -54,7 +54,7 @@
 
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" name="name" {value="{{Auth::user()->name}}"} />
+                                <input type="text" class="form-control" placeholder="Name" required="required" name="name"  />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-user"></i></div>
                                 </div>
@@ -133,7 +133,14 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
+                            <script> function error(){
+                                alert("you must login befor booking")
+                            }</script>
+                            @if(!Auth::check())
+                            <button  onclick="error()" class="btn custom-btn" type="submit">Book Now</button>
+                            @else
                             <button class="btn custom-btn" type="submit">Book Now</button>
+                            @endif
                         </div>
                     </form>
                 </div>

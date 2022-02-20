@@ -123,75 +123,50 @@
                                     </div>
                                     <div class="col-md-6">
                                         <input id="form_password" type="text" name="password"
-                                        {{-- value="{{Auth::user()->password}}
+                                        {{-- value="{{$user()->password}}
                                         " --}}
                                          >
                                     </div>
                                 </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>table number</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        @foreach($user->tables as $table)
-                                        {{-- {{ dd($table->id) }} --}}
-                                          <p> {{$table->number}}
-                                          </p>
-                                       @endforeach
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>date &Time</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        @foreach($user->tables as $table)
-                                        <p>
-                                         {{$table->pivot->date}}</p>
+                        <table style="
+                    background-color: #fbaf32; " class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Table number</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
 
-                                       @endforeach
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>time</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        @foreach($user->tables as $table)
-                                        <p>
-                                         {{$table->pivot->time}}</p>
+{{-- <div style="display:none">
+{{ $count= $user->tables->count()}}
 
-                                       @endforeach
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>status</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        @foreach($user->tables as $table)
+{{ $count2=$count-$count+1 }}
+</div> --}}
+@php
+$i=0;
 
-                                         <p> {{$table->pivot->status}}</p>
+@endphp
 
-                                          @endforeach
-                                    </div>
-                                </div>
-                                {{-- <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Availability</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>6 months</p>
-                                    </div>
-                                </div> --}}
-                        <div class="row">
-                            {{-- <div class="col-md-12">
-                                <label>Your Bio</label><br/>
-                                <p>Your detail description</p>
-                            </div> --}}
-                        </div>
+@foreach($user->tables as $table)
+                              <tr>
+
+                                 <th scope="row">{{ ++$i }}</th>
+                                <td>{{$table->number}}</td>
+                                <td> {{$table->pivot->date}}</td>
+                                <td> {{$table->pivot->time}}</td>
+                                <td> {{$table->pivot->status}}</td>
+                                     {{-- {{$count2=$count2+1}} --}}
+                                      </tr>@endforeach
+
+                            </tbody>
+                          </table>
+
                     </div>
                 </div>
             </div>

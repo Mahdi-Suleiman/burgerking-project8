@@ -32,8 +32,11 @@ public function profile()
     // $user->password=$request->user()->fill([
     //     'password' => Hash::make($request->newPassword)
     // ])->save();
-    $user->password=$request->input('password');
+    if ($request->input('password')!=null){
+          $user->password=$request->input('password');
 $user->password = Hash::make($user['password']);
+ 
+    }
 
 
 
