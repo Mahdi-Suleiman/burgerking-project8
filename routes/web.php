@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\TableController;
 use App\Http\Controllers\admin\UserController;
@@ -50,7 +51,7 @@ Route::post('/book', [App\Http\Controllers\TableController::class, 'store'])->na
 
 Route::middleware(['IsAdmin'])->group(function () {
     Route::get('/admin/dashboard', [IndexController::class, 'index'])->name('admin.index');
-    Route::delete('/admin/dashboard/{userId}/destroy/{pivotId}', [IndexController::class, 'destroy'])->name('index.destroy');
+    // Route::delete('/admin/dashboard/{userId}/destroy/{pivotId}', [IndexController::class, 'destroy'])->name('index.destroy');
     Route::put('/admin/dashboard/{userId}/update/{pivotId}', [IndexController::class, 'update'])->name('index.update');
 
     Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
@@ -67,4 +68,6 @@ Route::middleware(['IsAdmin'])->group(function () {
     Route::put('/admin/tables/{id}', [TableController::class, 'update'])->name('admin.tables.update');
     Route::get('/admin/tables/edit/{id}', [TableController::class, 'edit'])->name('admin.tables.edit');
     Route::put('/admin/tables/edit/{id}', [TableController::class, 'update'])->name('admin.tables.update');
+
+    Route::get('admin/contact', [ContactController::class, 'index'])->name('admin.contacts');
 });

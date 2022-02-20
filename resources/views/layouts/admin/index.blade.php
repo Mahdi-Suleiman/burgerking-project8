@@ -1,8 +1,68 @@
 @extends('layouts.admin.app')
 @section('content')
-
-            <!-- Recent Sales Start -->
+{{-- reports --}}
 <div class="container-fluid pt-4 px-4">
+
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <a class="nav-item nav-link" style="color: black">
+
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                {{-- <i class="fa fa-chart-line fa-3x text-primary"></i> --}}
+                {{-- <i class="fa fa-tachometer-alt me-2 fa-3x text-primary"></i> --}}
+                {{-- <i class="fa fa-ticket fa-3x text-primary"></i> --}}
+                {{-- <i class="fas fa-ticket-alt me-2 fa-3x text-primary"></i> --}}
+                <i class="fas fa-calendar-check me-2 fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Today Sale</p>
+                    <h6 class="mb-0">$1234</h6>
+                </div>
+            </div>
+        </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <a href="{{route('admin.users')}}" class="nav-item nav-link">
+
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                {{-- <i class="fa fa-chart-bar fa-3x text-primary"></i> --}}
+                <i class="fas fa-users me-2 fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Registered Users</p>
+                    <h6 class="mb-0">{{$allUsers}}</h6>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <a href="{{route('admin.tables')}}" class="nav-item nav-link">
+
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-table me-2 fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Tables</p>
+                    <h6 class="mb-0">{{$allTables}}</h6>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <a href="{{route('admin.contacts')}}" class="nav-item nav-link ">
+
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-address-book me-2 fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Contacts</p>
+                    <h6 class="mb-0">{{$allContacts}}</h6>
+                </div>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>
+
+{{-- reservations --}}
+<div class="container-fluid pt-4 px-4">
+
     <div class="bg-light text-center rounded p-4">
         <div class="table-responsive">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -12,11 +72,13 @@
                         {{-- <th></th> --}}
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Table ID</th>
+                        <th scope="col">Table Number</th>
                         <th scope="col">Mobile Number</th>
                         <th scope="col">Guest Number</th>
-                        <th scope="col">Date time</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">time</th>
                         <th scope="col">status</th>
+                        <th scope="col">Notes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,10 +89,14 @@
                                 <td>
                                     <a href="mailto:{{$user->email}}">{{$user->email}}</a>
                                 </td>
-                                <td>{{$table->pivot->table_id}}</td>
+                                {{-- <td>{{$table->pivot->table_id}}</td> --}}
+                                @foreach ($user->tables as $table )
+                                    <td>{{$table->number}}</td>
+                                @endforeach
                                 <td>{{$table->pivot->mobile_number}}</td>
                                 <td>{{$table->pivot->guest_number}}</td>
-                                <td>{{$table->pivot->datetime}}</td>
+                                <td>{{$table->pivot->date}}</td>
+                                <td>{{$table->pivot->time}}</td>
                                 <td>
                                     {{-- <form action="{{route('index.store',$table->pivot->id)}}" method="post"> --}}
                                     <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/update/' . $table->pivot->id)}}" method="post">
@@ -54,33 +120,20 @@
                                         <input type="hidden" name="table_id" value="{{$table->pivot->table_id}}">
                                         <input type="hidden" name="mobile_number" value="{{$table->pivot->mobile_number}}">
                                         <input type="hidden" name="guest_number" value="{{$table->pivot->guest_number}}">
-                                        <input type="hidden" name="datetime" value="{{$table->pivot->datetime}}">
+                                        <input type="hidden" name="date" value="{{$table->pivot->date}}">
+                                        <input type="hidden" name="time" value="{{$table->pivot->time}}">
+                                        <input type="hidden" name="note" value="{{$table->pivot->note}}">
 
                                     </form>
                                 </td>
-
                                 <td>
-                                    {{-- <form action="{{route('index.destroy',$table->pivot->user_id, $table->pivot->id)}}" method="post"> --}}
-                                        {{-- <form action="{{route('index.destroy',['userId' => $table->pivot->user_id,'pivotId' => $table->pivot->id])}}" method="post"> --}}
-                                    <form action="{{URL::to('/admin/dashboard/' . $table->pivot->user_id . '/destroy/' . $table->pivot->id)}}" method="post" onsubmit="return confirm('are you sure ?')">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
+                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" readonly>
+                                        {{$table->pivot->note}}
+                                    </textarea>
                                 </td>
                             </tr>
                         @endforeach
                     @endforeach
-                    {{-- <tr>
-                        <td><input class="form-check-input" type="checkbox"></td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>Paid</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr> --}}
-
                 </tbody>
             </table>
         </div>

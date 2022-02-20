@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{route('admin.index')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{route('admin.index')}}" class="nav-item nav-link active"><i class="fas fa-calendar-check me-2"></i>Reservations</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-users me-2"></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -70,6 +70,9 @@
                             <a href="{{route('admin.tables.add')}}" class="nav-item nav-link">Add Table</a>
                         </div>
                     </div>
+                    <a href="{{route('admin.contacts')}}" class="nav-item nav-link "><i class="fa fa-address-book me-2" ></i>Contacts</a>
+
+
                 </div>
             </nav>
         </div>

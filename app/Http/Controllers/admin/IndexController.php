@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\Table;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,10 +35,21 @@ class IndexController extends Controller
         // $table = Table::create(['']);
         // $table = Table::find(1);
         // $table->users()->attach('1', ['user_id' => '5', 'table_id' => '2', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
+        // $allReservations = 0;
+        // foreach ($users as $user) {
+        //     dd($users[2]->tables()->pivot()->mobile_number);
+        //     if ($user->tables());
+        // }
         $users = User::with('tables')->where('role', 'user')->get();
         $allStatus = ['pending', 'accepted', 'rejected'];
-        // dd($allStatus);
-        return view('layouts.admin.index', compact('users', 'allStatus'));
+        $allUsers = $users->count();
+        $allTables = Table::all()->count();
+        $allContacts = Contact::all()->count();
+        // dd($allTables);
+        // dd($allUsers);
+
+        // dd($users->tables());
+        return view('layouts.admin.index', compact('users', 'allStatus', 'allUsers', 'allTables', 'allContacts'));
     }
 
     /**
@@ -111,7 +123,9 @@ class IndexController extends Controller
             "mobile_number" => $request->mobile_number,
             "guest_number" => $request->guest_number,
             "status" => $request->status,
-            "datetime" => $request->datetime
+            "date" => $request->date,
+            "time" => $request->time,
+            "note" => $request->note
         ]);
         // $user->tables()->wherePivot('id', '=', $pivotId)->detach();
 
@@ -135,10 +149,13 @@ class IndexController extends Controller
         // $users->tables()->detach($id);
         // $users->deleteOrFail()
         // dd($pivotId);
-        $users = User::with('tables')->where('role', 'user')->get();
-        $user = $users->find($userId);
-        $user->tables()->wherePivot('id', '=', $pivotId)->detach();
-        return redirect()->back();
         // $visits->products()->wherePivot('product_id', '=', $product_id)->detach();
+
+
+        #commented working code
+        // $users = User::with('tables')->where('role', 'user')->get();
+        // $user = $users->find($userId);
+        // $user->tables()->wherePivot('id', '=', $pivotId)->detach();
+        // return redirect()->back();
     }
 }

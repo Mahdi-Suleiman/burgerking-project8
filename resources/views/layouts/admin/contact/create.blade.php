@@ -12,7 +12,7 @@
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-dark">
-                        <th scope="col">Table number<span style="color: red">*</span></th>
+                        <th scope="col">Table number</th>
                         <th scope="col">Add table</th>
                     </tr>
                 </thead>

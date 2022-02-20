@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Table;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class TableController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class TableController extends Controller
     public function index()
     {
         //
-        $tables = Table::all();
-        return view('layouts.admin.table.index', compact('tables'));
+        $contacts = Contact::all();
+        return view('layouts.admin.contact.index', compact('contacts'));
     }
 
     /**
@@ -28,8 +28,6 @@ class TableController extends Controller
     public function create()
     {
         //
-        $allStatus = ['not reserved', 'reserved'];
-        return view('layouts.admin.table.create', compact('allStatus'));
     }
 
     /**
@@ -41,13 +39,6 @@ class TableController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'number' => 'required|numeric|unique:tables,number',
-        ]);
-        Table::create([
-            'number' => $request->number,
-        ]);
-        return redirect()->back()->with(['message' => 'Table added successfully']);
     }
 
     /**
@@ -70,9 +61,6 @@ class TableController extends Controller
     public function edit($id)
     {
         //
-        $table = Table::find($id);
-        // $allStatus = ['not reserved', 'reserved'];
-        return view('layouts.admin.table.edit', compact('table'));
     }
 
     /**
@@ -85,14 +73,6 @@ class TableController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $request->validate([
-            'number' => 'required|numeric|unique:tables,number',
-        ]);
-        $table = Table::find($id);
-        $table->update([
-            'number' => $request->number,
-        ]);
-        return redirect()->back()->with(['message' => 'Table updated successfully']);
     }
 
     /**
@@ -104,8 +84,5 @@ class TableController extends Controller
     public function destroy($id)
     {
         //
-        $table = Table::find($id);
-        $table->deleteOrFail();
-        return redirect()->back()->with(['message' => 'delete was successful']);
     }
 }

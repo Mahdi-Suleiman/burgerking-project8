@@ -12,10 +12,10 @@
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                     <tr class="text-dark">
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Mobile #</th>
+                        <th scope="col">Name<span style="color: red">*</span></th>
+                        <th scope="col">Email<span style="color: red">*</span></th>
+                        <th scope="col">Password<span style="color: red">*</span></th>
+                        <th scope="col">Mobile Number <small style="color: red">optional</small></th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
