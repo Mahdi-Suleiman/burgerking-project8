@@ -369,7 +369,7 @@
                                             <img src="img/menu-burger.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
-                                            <h3><span>Mini cheese Burger</span> <strong>$9.00</strong></h3>
+                                            <h3><span>Mini cheese Burger</span> <strong>JD2.00</strong></h3>
                                             <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
                                         </div>
                                     </div>
@@ -378,7 +378,7 @@
                                             <img src="img/menu-burger.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
-                                            <h3><span>Double size burger</span> <strong>$11.00</strong></h3>
+                                            <h3><span>Double size burger</span> <strong>JD8.00</strong></h3>
                                             <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
                                         </div>
                                     </div>
@@ -387,7 +387,7 @@
                                             <img src="img/menu-burger.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
-                                            <h3><span>Bacon, EGG and Cheese</span> <strong>$13.00</strong></h3>
+                                            <h3><span>Bacon, EGG and Cheese</span> <strong>JD4.00</strong></h3>
                                             <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
                                         </div>
                                     </div>
@@ -396,7 +396,7 @@
                                             <img src="img/menu-burger.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
-                                            <h3><span>Pulled porx Burger</span> <strong>$18.00</strong></h3>
+                                            <h3><span>Pulled porx Burger</span> <strong>JD3.00</strong></h3>
                                             <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
                                         </div>
                                     </div>
@@ -405,7 +405,7 @@
                                             <img src="img/menu-burger.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
-                                            <h3><span>Fried chicken Burger</span> <strong>$22.00</strong></h3>
+                                            <h3><span>Fried chicken Burger</span> <strong>JD5.00</strong></h3>
                                             <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
                                         </div>
                                     </div>
