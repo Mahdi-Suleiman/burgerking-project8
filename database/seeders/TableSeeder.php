@@ -19,15 +19,15 @@ class TableSeeder extends Seeder
         DB::table('tables')->insert([
             [
                 "number" => 1,
-                "reserved" => 'not reserved'
+                // "reserved" => 'not reserved'
             ],
             [
                 "number" => 2,
-                "reserved" => 'not reserved'
+                // "reserved" => 'not reserved'
             ],
             [
                 "number" => 3,
-                "reserved" => 'reserved'
+                // "reserved" => 'reserved'
             ],
         ]);
     }

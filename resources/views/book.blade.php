@@ -39,7 +39,15 @@
             </div>
             <div class="col-lg-5">
                 <div class="booking-form">
-                    <form  method="post" action="{{route('book.store',) }}"
+                    @if (session()->has('success'))
+                    <div  style="width: 100%" class="alert alert-success alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <p class="updated">{!! session()->get('success') !!}</p></div>
+                        @endif
+
+                    <form  method="post" action="{{route('book.store') }}"
                         >
                         @csrf
 
@@ -54,7 +62,7 @@
                         </div>
                         {{-- <div class="control-group">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
+                                <input type="text" class="form-control" placeholder="Table Number" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-envelope"></i></div>
                                 </div>
@@ -86,7 +94,8 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <select class="custom-select form-control" name="guest_number">
+                                <select  style="
+                                background-color: #fbaf32;"class="custom-select form-control" name="guest_number">
                                     <option selected>Guest</option>
                                     <option value="1">1 Guest</option>
                                     <option value="2">2 Guest</option>
@@ -103,6 +112,25 @@
                                     <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <select style="
+                                background-color: #fbaf32;" class="custom-select form-control" name="number">
+                                    <option selected>Table number</option>
+                                    @foreach($tables as $table)
+                                    <option value="{{ $table->id }}">{{ $table->number }} </option>
+                                    @endforeach
+                                </select>
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+
+                            <textarea  rows="3" class="form-control" id="message" name="note" placeholder="write you order here if you want it to prepared in advance "  data-validation-required-message="Please enter your message"></textarea>
+                            <p class="help-block text-danger"></p>
                         </div>
                         <div>
                             <button class="btn custom-btn" type="submit">Book Now</button>

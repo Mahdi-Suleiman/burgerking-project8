@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             // $table->boolean('reserved')->default(false);
             $table->unsignedBigInteger('number');
-            $table->enum('reserved', ['reserved', 'not reserved'])->default('not reserved');
+            // $table->enum('reserved', ['reserved', 'not reserved'])->default('not reserved');
             $table->timestamps();
         });
     }

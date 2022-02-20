@@ -14,7 +14,7 @@
                                 Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="{{ url('/booking') }}">Book Table</a>
+                                <a class="btn custom-btn" href="{{ url('/book') }}">Book Table</a>
                             </div>
                         </div>
                     </div>

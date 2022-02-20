@@ -50,7 +50,7 @@
 
         <div class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Burger <span>King</span></a>
+                <a href="{{ url('/') }}" class="navbar-brand">Burger <span>King</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -61,7 +61,7 @@
                         <a href="{{ url('/about-us') }}" class="nav-item nav-link">About</a>
                         <a href="{{ url('/feature') }}" class="nav-item nav-link">Feature</a>
                         <a href="{{ url('/chef') }}" class="nav-item nav-link">Chef</a>
-                        <a href="{{ url('/booking') }}" class="nav-item nav-link">Booking</a>
+                        <a href="{{ url('/book') }}" class="nav-item nav-link">Booking</a>
 
                         <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
 
@@ -74,7 +74,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
-                        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
