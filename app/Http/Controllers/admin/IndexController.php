@@ -32,7 +32,8 @@ class IndexController extends Controller
 
 
         // $table = Table::create(['']);
-        // $table->users()->attach('1', ['user_id' => '2', 'table_id' => '1', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
+        // $table = Table::find(1);
+        // $table->users()->attach('1', ['user_id' => '5', 'table_id' => '2', 'mobile_number' => '0788679455', 'guest_number' => '4', 'datetime' => '2022-02-20 09:22:20']);
         $users = User::with('tables')->where('role', 'user')->get();
         $allStatus = ['pending', 'accepted', 'rejected'];
         // dd($allStatus);
