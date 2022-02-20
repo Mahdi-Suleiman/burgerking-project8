@@ -5,7 +5,7 @@
 
     <div class="row g-4">
         <div class="col-sm-6 col-xl-3">
-            <a class="nav-item nav-link" style="color: black">
+            <a class="nav-item nav-link">
 
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                 {{-- <i class="fa fa-chart-line fa-3x text-primary"></i> --}}
@@ -14,8 +14,8 @@
                 {{-- <i class="fas fa-ticket-alt me-2 fa-3x text-primary"></i> --}}
                 <i class="fas fa-calendar-check me-2 fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Today Sale</p>
-                    <h6 class="mb-0">$1234</h6>
+                    <p class="mb-2">Total Reservations</p>
+                    <h6 class="mb-0">{{$totalCount}}</h6>
                 </div>
             </div>
         </a>
@@ -90,9 +90,13 @@
                                     <a href="mailto:{{$user->email}}">{{$user->email}}</a>
                                 </td>
                                 {{-- <td>{{$table->pivot->table_id}}</td> --}}
+
+                                <td>
                                 @foreach ($user->tables as $table )
-                                    <td>{{$table->number}}</td>
+                                <br>
+                                    {{$table->number}}
                                 @endforeach
+                                </td>
                                 <td>{{$table->pivot->mobile_number}}</td>
                                 <td>{{$table->pivot->guest_number}}</td>
                                 <td>{{$table->pivot->date}}</td>

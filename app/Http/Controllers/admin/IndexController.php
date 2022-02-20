@@ -45,11 +45,19 @@ class IndexController extends Controller
         $allUsers = $users->count();
         $allTables = Table::all()->count();
         $allContacts = Contact::all()->count();
+        $totalCount = 0;
+        foreach ($users as $user) {
+            $totalCount += $user->tables->count();
+            // $count = $user->tables->count();
+
+        }
+
+        // dd($totalCount);
         // dd($allTables);
         // dd($allUsers);
 
         // dd($users->tables());
-        return view('layouts.admin.index', compact('users', 'allStatus', 'allUsers', 'allTables', 'allContacts'));
+        return view('layouts.admin.index', compact('users', 'allStatus', 'allUsers', 'allTables', 'allContacts', 'totalCount'));
     }
 
     /**
