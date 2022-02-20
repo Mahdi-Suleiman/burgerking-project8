@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 class ProfileController extends Controller
 {
 public function profile()
 {
-    return view('users.user-profile');
+     $user_id=Auth::user()->id;
+     $user=User::find($user_id);
+    // dd($user);
+    return view('users.user-profile',compact('user'));
 }
 
 
@@ -21,12 +27,22 @@ public function profile()
     $user_id=Auth::user()->id;
     $user=User::findOrFail($user_id);
     $user->name=$request->input('name');
+    // $user->password=$request->input('password');
+    // $user->tables->pivot->mobile_number=$request->input('mobile_number');
+    // $user->password=$request->user()->fill([
+    //     'password' => Hash::make($request->newPassword)
+    // ])->save();
     $user->password=$request->input('password');
-    $user->tables->pivot->mobile_number=$request->input('mobile_number');
+$user->password = Hash::make($user['password']);
+
 
 
     $user->update();
+    $request->flash();
+        session()->flash('success', 'Your profile updated successfully.');
     return redirect()->back()->with('status profile updated');
+
+
     }
 
     /**

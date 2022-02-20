@@ -17,8 +17,17 @@
     </div>
 </div>
 <br>
-<br>
+<br><h1 class="profile-heading">User Profile</h1>
 <div class="container emp-profile">
+
+    @if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <p class="updated">{!! session()->get('success') !!}</p></div>
+        @endif
+
     <form method="post" action="{{ route('users.edit') }}">
         @csrf
 
@@ -35,7 +44,7 @@
             <div class="col-md-4">
                 <div class="profile-head">
                             <h5>
-                              {{Auth::user()->name}}
+                             Hello {{Auth::user()->name}}
                             </h5>
 
 
@@ -88,8 +97,10 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
+                                        <input id="mobile_number" type="text" name="mobile_number"
+                                        value=" {{$user->email}} "
+                                       disabled >
 
-                                        <p>{{Auth::user()->email}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -97,18 +108,24 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-md-6">
-                                        {{-- <input id="mobile_number" type="text" name="mobile_number"
-                                         value=" {{Auth::user()->tables->pivot->mobile_number}}"
-                                         > --}}
+                                        @foreach($user->tables as $table)
+                                       <input id="mobile_number" type="text" name="mobile_number"
+                                         value=" {{$table->pivot->mobile_number}}"
+                                         >
+                                      @endforeach
+
 
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>password</label>
+                                        <label> New password</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input id="form_password" type="text" name="password"   value="{{Auth::user()->password}}">
+                                        <input id="form_password" type="text" name="password"
+                                        {{-- value="{{Auth::user()->password}}
+                                        " --}}
+                                         required>
                                     </div>
                                 </div>
                     </div>
@@ -118,15 +135,23 @@
                                         <label>table number</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>1</p>
+                                        @foreach($user->tables as $table)
+
+                                          <p> {{$table->pivot->table_id}}
+                                          </p>
+                                       @endforeach
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>date</label>
+                                        <label>date &Time</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>25/2/2022</p>
+                                        @foreach($user->tables as $table)
+                                        <p>
+                                         {{$table->pivot->date}}</p>
+
+                                       @endforeach
                                     </div>
                                 </div>
                                 <div class="row">
@@ -134,7 +159,11 @@
                                         <label>time</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>23:00</p>
+                                        @foreach($user->tables as $table)
+                                        <p>
+                                         {{$table->pivot->time}}</p>
+
+                                       @endforeach
                                     </div>
                                 </div>
                                 <div class="row">
@@ -142,7 +171,11 @@
                                         <label>status</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>pending</p>
+                                        @foreach($user->tables as $table)
+
+                                         <p> {{$table->pivot->status}}</p>
+
+                                          @endforeach
                                     </div>
                                 </div>
                                 {{-- <div class="row">
@@ -163,6 +196,7 @@
                 </div>
             </div>
         </div>
+
     </form>
 </div>
 @endsection
