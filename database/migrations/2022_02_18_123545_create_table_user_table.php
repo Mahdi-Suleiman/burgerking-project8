@@ -22,8 +22,9 @@ return new class extends Migration
             $table->foreign('table_id')->references('id')->on('tables')->onUpdate('cascade')->onDelete('cascade');
             $table->string('mobile_number');
             $table->integer('guest_number');
-            $table->date('date') ;
-            $table->time('time') ;
+            $table->dateTime('datetime');
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
 
             $table->timestamps();
