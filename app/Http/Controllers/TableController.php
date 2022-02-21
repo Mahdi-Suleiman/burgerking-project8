@@ -74,7 +74,13 @@ class TableController extends Controller
                 $id = Auth::user()->id;
                 $table->users()->attach(
                     $id,
-                    ['mobile_number' => $request->mobile_number, 'guest_number' => $request->guest_number, 'time' => $request->time, 'date' => $request->date, 'note' => $request->note]
+                    [
+                        'mobile_number' => $request->mobile_number,
+                        'guest_number' => $request->guest_number,
+                        'time' => $request->time,
+                        'date' => $request->date,
+                        'note' => $request->note
+                    ]
                 );
                 $request->flash();
                 session()->flash('success', 'Thank you ..you can check your profile to know your Reservation

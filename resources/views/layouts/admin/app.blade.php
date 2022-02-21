@@ -90,7 +90,7 @@
                 </a>
 
                 <div class="navbar-nav align-items-center ms-auto">
-                    @guest
+                        @guest
                             @if (Route::has('login'))
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             @endif

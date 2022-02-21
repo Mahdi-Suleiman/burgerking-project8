@@ -91,12 +91,13 @@
                                 </td>
                                 {{-- <td>{{$table->pivot->table_id}}</td> --}}
 
-                                <td>
-                                @foreach ($user->tables as $table )
+                                <td>{{$table->number}}</td>
+                                {{-- <td>
+                                @foreach ($table as $t )
                                 <br>
-                                    {{$table->number}}
+                                    {{$t->number}}
                                 @endforeach
-                                </td>
+                                </td> --}}
                                 <td>{{$table->pivot->mobile_number}}</td>
                                 <td>{{$table->pivot->guest_number}}</td>
                                 <td>{{$table->pivot->date}}</td>
