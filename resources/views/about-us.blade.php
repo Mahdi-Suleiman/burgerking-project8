@@ -20,7 +20,7 @@
 
 
     <!-- Food Start -->
-    <div class="food mt-0">
+    {{-- <div class="food mt-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Food End -->
 
 
@@ -79,11 +79,25 @@
                         </div>
                         <div class="about-text">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                                Welcome To Burger King!
+
+                                We Are The Best Place To Go When You’re Looking For Delicious Mouthwatering Burgers
+
+                                Our Specialty Is The Flavors Starting From The North To The South!
+
+                                And West To The East!
+
+                                We Are The Diner Where You Find Amazing Combinations And Unexpected As Well, Amazing Atmosphere , Endless Joy, Magnificent Tastes And Affordable Prices !!
+
+                                To Sum Up , Best Burgers In Town.
+
+                                Reservation Service Is Available At :
+
+                                06-5689148
                             </p>
-                            <p>
+                            {{-- <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
-                            </p>
+                            </p> --}}
                             <a class="btn custom-btn" href="">Book A Table</a>
                         </div>
                     </div>

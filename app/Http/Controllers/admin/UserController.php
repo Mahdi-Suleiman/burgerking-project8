@@ -136,8 +136,8 @@ class UserController extends Controller
     {
         //
         // dd($id);
-        $user = User::find($id);
-        $user->deleteOrFail();
+        $user = User::deleteOrFail($id);
+
         return redirect()->back()->with(['message' => 'delete was successful']);
     }
 }

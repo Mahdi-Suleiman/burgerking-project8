@@ -45,6 +45,7 @@ Route::post('/contact-us-store', [App\Http\Controllers\ContactController::class,
 
 Route::get('/user-profile', [App\Http\Controllers\ProfileController::class, 'profile']);
 Route::post('/user-profile-update', [App\Http\Controllers\ProfileController::class, 'update'])->name('users.edit');
+Route::delete('/user-profile-delete/{id}', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('users.destroy');
 
 Route::get('/book', [App\Http\Controllers\TableController::class, 'index']);
 Route::post('/book', [App\Http\Controllers\TableController::class, 'store'])->name('book.store');
