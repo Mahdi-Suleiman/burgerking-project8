@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Table;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -45,13 +46,17 @@ class IndexController extends Controller
         $allUsers = $users->count();
         $allTables = Table::all()->count();
         $allContacts = Contact::all()->count();
-        $totalCount = 0;
-        foreach ($users as $user) {
-            $totalCount += $user->tables->count();
-            // $count = $user->tables->count();
 
-        }
+        // $totalCount = 0;
+        // foreach ($users as $user) {
+        //     $totalCount += $user->tables->count();
+        //     // $count = $user->tables->count();
 
+        // }
+
+        $totalCount = DB::table('table_user')
+            ->count();
+        // dd($countTest);
         // dd($totalCount);
         // dd($allTables);
         // dd($allUsers);
