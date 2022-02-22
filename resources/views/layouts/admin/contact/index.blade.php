@@ -34,9 +34,7 @@
                             </textarea>
                         </td> --}}
                         <td>
-                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" readonly>
-                                {{$contact->message}}
-                            </textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" readonly>{{$contact->message}}</textarea>
                         </td>
 {{--
                         <td>

@@ -132,9 +132,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" readonly>
-                                        {{$table->pivot->note}}
-                                    </textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" readonly>{{$table->pivot->note}}</textarea>
                                 </td>
                             </tr>
                         @endforeach
