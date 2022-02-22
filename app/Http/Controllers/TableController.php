@@ -48,7 +48,6 @@ class TableController extends Controller
         if (Auth::check()) {
             // $tables = DB::table('table_user')->where('table_id', $table->id)->get();
             $tables = Table::with('users')->get();
-
             // dd($tables);
             $error = false;
             foreach ($tables as $onetable) {
