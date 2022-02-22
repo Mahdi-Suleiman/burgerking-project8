@@ -29,10 +29,14 @@
                     </div>
                     <div class="about-text">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                            reserve you table anytime and from any device. it is easy to use and reservations are instantly confirmed in real-time. Your next table reservation is a click away!
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+
+Saturday - Friday </p>
+<p>
+
+12 :00 PM - 12:00 AM</p>
                         </p>
                     </div>
                 </div>
@@ -52,14 +56,14 @@
                         @csrf
 
 
-                        <div class="control-group">
+                        {{-- <div class="control-group">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Name" required="required" name="name"  />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-user"></i></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="control-group">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Table Number" required="required" />
@@ -179,8 +183,8 @@
                                     <img src="img/menu-burger.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Mini cheese Burger</span> <strong>$9.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Mini cheese Burger</span> <strong>JD2.00</strong></h3>
+                                    <p>60 g Beef Patty, Cheddar Cheese, Lettuce, Pickles.</p>
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -188,8 +192,8 @@
                                     <img src="img/menu-burger.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Double size burger</span> <strong>$11.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Double size burger</span> <strong>JD5.00</strong></h3>
+                                    <p>180 g Of Fresh Beef Patty , Cheddar Cheese, Tomato, lettuce, Pickles, Onion & our Beef Sauce.</p>
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -197,8 +201,16 @@
                                     <img src="img/menu-burger.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Bacon, EGG and Cheese</span> <strong>$13.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Bacon, EGG and Cheese</span> <strong>JD6.00</strong></h3>
+                                    <p>A Slice of Beef Bacon, egg, Smoked Cheese, Makers Sauce, Fresh Tomato , Lettuce and our Sauce</p></div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-img">
+                                    <img src="img/menu-burger.jpg" alt="Image">
+                                </div>
+                                <div class="menu-text">
+                                    <h3><span>Mushroom Burger</span> <strong>JD6.00</strong></h3>
+                                    <p>Brown Mushroom Sauce With Steak, Swiss Cheese & Makers Sauce.</p>
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -206,17 +218,8 @@
                                     <img src="img/menu-burger.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Pulled porx Burger</span> <strong>$18.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
-                                </div>
-                                <div class="menu-text">
-                                    <h3><span>Fried chicken Burger</span> <strong>$22.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Swedish Chicken Burger</span> <strong>JD5.00</strong></h3>
+                                    <p>BBQ Sauce, Mozzarella Cheese, Lettuce, Tomato, & Chicken Makers Sauce.</p>
                                 </div>
                             </div>
                         </div>
@@ -233,8 +236,8 @@
                                     <img src="img/menu-snack.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>$15.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>JD3.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -242,8 +245,8 @@
                                     <img src="img/menu-snack.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Bread besan Toast</span> <strong>$35.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Bread besan Toast</span> <strong>JD2.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -251,8 +254,8 @@
                                     <img src="img/menu-snack.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Healthy soya nugget snacks</span> <strong>$20.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Healthy soya nugget snacks</span> <strong>JD2.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -260,8 +263,8 @@
                                     <img src="img/menu-snack.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Tandoori Soya Chunks</span> <strong>$30.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Tandoori Soya Chunks</span> <strong>JD3.00</strong></h3>
+
                                 </div>
                             </div>
                         </div>
@@ -278,8 +281,8 @@
                                     <img src="img/menu-beverage.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Single Cup Brew</span> <strong>$7.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Soft Drink</span> <strong>JD0.5</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -287,8 +290,8 @@
                                     <img src="img/menu-beverage.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Caffe Americano</span> <strong>$9.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Caffe Americano</span> <strong>JD2.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -296,8 +299,8 @@
                                     <img src="img/menu-beverage.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Caramel Macchiato</span> <strong>$15.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Caramel Macchiato</span> <strong>JD4.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -305,8 +308,8 @@
                                     <img src="img/menu-beverage.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Standard black coffee</span> <strong>$8.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>Standard black coffee</span> <strong>JD2.00</strong></h3>
+
                                 </div>
                             </div>
                             <div class="menu-item">
@@ -314,8 +317,8 @@
                                     <img src="img/menu-beverage.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Standard black coffee</span> <strong>$12.00</strong></h3>
-                                    <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    <h3><span>water</span> <strong>JD2.00</strong></h3>
+
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Table;
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Http\Request;
 
@@ -24,23 +24,23 @@ public function profile()
 
     public function update(Request $request)
     {
-    $user_id=Auth::user()->id;
-    $user=User::findOrFail($user_id);
-    $user->name=$request->input('name');
-    // $user->password=$request->input('password');
-    // $user->tables->pivot->mobile_number=$request->input('mobile_number');
-    // $user->password=$request->user()->fill([
+    $user_id=Auth::user();
+    // $user=User::findOrFail($user_id);
+    $user_id->name=$request->input('name');
+    // $user_id->password=$request->input('password');
+    // $user_id->tables->pivot->mobile_number=$request->input('mobile_number');
+    // $user_id->password=$request->user()->fill([
     //     'password' => Hash::make($request->newPassword)
     // ])->save();
     if ($request->input('password')!=null){
-          $user->password=$request->input('password');
-$user->password = Hash::make($user['password']);
- 
+          $user_id->password=$request->input('password');
+$user_id->password = Hash::make($user_id['password']);
+
     }
 
 
 
-    $user->update();
+    $user_id->update();
     $request->flash();
         session()->flash('success', 'Your profile updated successfully.');
     return redirect()->back()->with('status profile updated');
@@ -54,8 +54,12 @@ $user->password = Hash::make($user['password']);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($pivotId)
+    { $user_id=Auth::user();
+        // $user = User::find($user_id);
+        $user_id->tables()->wherePivot('id', '=', $pivotId)->detach();
+
+
+        return redirect()->back();
     }
 }

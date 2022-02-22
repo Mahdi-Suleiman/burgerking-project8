@@ -89,6 +89,7 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-md-6">
+
                                         <input id="form_name" type="text" name="name"   value="{{Auth::user()->name}}">
                                     </div>
                                 </div>
@@ -139,6 +140,10 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
                                 <th scope="col">status</th>
+                                <th scope="col">Note</th>
+                                <th scope="col">Action</th>
+
+
                               </tr>
                             </thead>
                             <tbody>
@@ -161,6 +166,14 @@ $i=0;
                                 <td> {{$table->pivot->date}}</td>
                                 <td> {{$table->pivot->time}}</td>
                                 <td> {{$table->pivot->status}}</td>
+                                <td> {{$table->pivot->note}}</td>
+                                <td> </form>
+                                    <form action="{{ url('/user-profile-delete/'.$table->pivot->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
+                                    </form>
+                                </td>
                                      {{-- {{$count2=$count2+1}} --}}
                                       </tr>@endforeach
 
@@ -172,6 +185,6 @@ $i=0;
             </div>
         </div>
 
-    </form>
+
 </div>
 @endsection

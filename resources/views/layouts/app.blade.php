@@ -59,8 +59,8 @@
                     <div class="navbar-nav ml-auto">
                         <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
                         <a href="{{ url('/about-us') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ url('/feature') }}" class="nav-item nav-link">Feature</a>
-                        <a href="{{ url('/chef') }}" class="nav-item nav-link">Chef</a>
+                        {{-- <a href="{{ url('/feature') }}" class="nav-item nav-link">Feature</a>
+                        <a href="{{ url('/chef') }}" class="nav-item nav-link">Chef</a> --}}
                         <a href="{{ url('/book') }}" class="nav-item nav-link">Booking</a>
 
                         <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
