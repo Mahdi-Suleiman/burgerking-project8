@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Table;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -40,23 +41,27 @@ class IndexController extends Controller
         //     dd($users[2]->tables()->pivot()->mobile_number);
         //     if ($user->tables());
         // }
-        $users = User::with('tables')->where('role', 'user')->get();
-        $allStatus = ['pending', 'accepted', 'rejected'];
-        $allUsers = $users->count();
-        $allTables = Table::all()->count();
-        $allContacts = Contact::all()->count();
-        $totalCount = 0;
-        foreach ($users as $user) {
-            $totalCount += $user->tables->count();
-            // $count = $user->tables->count();
 
-        }
+        // $totalCount = 0;
+        // foreach ($users as $user) {
+        //     $totalCount += $user->tables->count();
+        //     // $count = $user->tables->count();
 
+        // }
+
+        // dd($countTest);
         // dd($totalCount);
         // dd($allTables);
         // dd($allUsers);
 
         // dd($users->tables());
+        $users = User::with('tables')->where('role', 'user')->get();
+        $allStatus = ['pending', 'accepted', 'rejected'];
+        $allUsers = $users->count();
+        $allTables = Table::all()->count();
+        $allContacts = Contact::all()->count();
+        $totalCount = DB::table('table_user')
+            ->count();
         return view('layouts.admin.index', compact('users', 'allStatus', 'allUsers', 'allTables', 'allContacts', 'totalCount'));
     }
 
@@ -135,6 +140,7 @@ class IndexController extends Controller
             "time" => $request->time,
             "note" => $request->note
         ]);
+
         // $user->tables()->wherePivot('id', '=', $pivotId)->detach();
 
         return redirect()->back();
