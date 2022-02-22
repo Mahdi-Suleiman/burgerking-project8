@@ -295,7 +295,7 @@ Book your table now.
                                 <div class="col-lg-7 col-md-12">
                                     <div class="menu-item">
                                         <div class="menu-img">
-                                            <img src="img/menu-burger.jpg" alt="Image">
+                                            <img src="img/p1.jpg" alt="Image">
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Mini cheese Burger</span> <strong>JD2.00</strong></h3>
