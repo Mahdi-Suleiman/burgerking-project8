@@ -180,16 +180,16 @@ Saturday - Friday </p>
                         <div class="col-lg-7 col-md-12">
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
+                                    <img src="img/p1.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Mini cheese Burger</span> <strong>JD2.00</strong></h3>
-                                    <p>60 g Beef Patty, Cheddar Cheese, Lettuce, Pickles.</p>
+                                    <h3><span>Mini cheese Burger</span> <strong>JD3.00</strong></h3>
+                                    <p style="margin:14.4px 5px 0 0">60 g Beef Patty, Cheddar Cheese, Lettuce, Pickles. this meal is best choies for kids</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
+                                    <img src="img/p2.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>Double size burger</span> <strong>JD5.00</strong></h3>
@@ -198,7 +198,7 @@ Saturday - Friday </p>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
+                                    <img src="img/p3.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>Bacon, EGG and Cheese</span> <strong>JD6.00</strong></h3>
@@ -206,19 +206,19 @@ Saturday - Friday </p>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
+                                    <img src="img/p4.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Mushroom Burger</span> <strong>JD6.00</strong></h3>
+                                    <h3><span>Mushroom Burger</span> <strong>JD7.00</strong></h3>
                                     <p>Brown Mushroom Sauce With Steak, Swiss Cheese & Makers Sauce.</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-burger.jpg" alt="Image">
+                                    <img src="img/p5.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Swedish Chicken Burger</span> <strong>JD5.00</strong></h3>
+                                    <h3><span>Swedish Chicken Burger</span> <strong>JD8.00</strong></h3>
                                     <p>BBQ Sauce, Mozzarella Cheese, Lettuce, Tomato, & Chicken Makers Sauce.</p>
                                 </div>
                             </div>
@@ -233,38 +233,39 @@ Saturday - Friday </p>
                         <div class="col-lg-7 col-md-12">
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-snack.jpg" alt="Image">
+                                    <img src="img/s1.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>JD3.00</strong></h3>
+                                    <h3><span>Spicy Tuna Poke</span> <strong>JD5.00</strong></h3>
+                                    <p>Tuna fish, organic quinoa, chili, onions, leafy greens and soy sauce,.</p>
 
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-snack.jpg" alt="Image">
+                                    <img src="img/s3.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Bread besan Toast</span> <strong>JD2.00</strong></h3>
-
+                                    <h3><span>Shrimp Poke</span> <strong>JD8.00</strong></h3>
+                                    <p>Shrimp, black rice, green beans, carrots, scallions, red cabbage, cucumber, Served with scallion, lemon and soy sauce.</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-snack.jpg" alt="Image">
+                                    <img src="img/s2.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Healthy soya nugget snacks</span> <strong>JD2.00</strong></h3>
-
+                                    <h3><span>Asian Monk</span> <strong>JD7.00</strong></h3>
+                                    <p>SPurslane, edamame, red cabbage, green chili, chicken breast, cashew, sesame seeds, peanut dressing </p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-snack.jpg" alt="Image">
+                                    <img src="img/s5.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Tandoori Soya Chunks</span> <strong>JD3.00</strong></h3>
-
+                                    <h3><span>Fajita Bowl</span> <strong>JD8.00</strong></h3>
+                                    <p>Organic quinoa, avocado, chicken, lettuce, rocca cherry tomatoes, onion, cashew, parsley, bell pepper, parmesan, served with tomato salsa, sour cream </p>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +279,7 @@ Saturday - Friday </p>
                         <div class="col-lg-7 col-md-12">
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-beverage.jpg" alt="Image">
+                                    <img src="img/d1.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>Soft Drink</span> <strong>JD0.5</strong></h3>
@@ -287,7 +288,7 @@ Saturday - Friday </p>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-beverage.jpg" alt="Image">
+                                    <img src="img/d2.jpg"alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>Caffe Americano</span> <strong>JD2.00</strong></h3>
@@ -296,7 +297,7 @@ Saturday - Friday </p>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-beverage.jpg" alt="Image">
+                                    <img src="img/d3.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>Caramel Macchiato</span> <strong>JD4.00</strong></h3>
@@ -305,16 +306,16 @@ Saturday - Friday </p>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-beverage.jpg" alt="Image">
+                                    <img src="img/d4.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span>Standard black coffee</span> <strong>JD2.00</strong></h3>
+                                    <h3><span>Standard coffee</span> <strong>JD2.00</strong></h3>
 
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="menu-img">
-                                    <img src="img/menu-beverage.jpg" alt="Image">
+                                    <img src="img/w.jpg" alt="Image">
                                 </div>
                                 <div class="menu-text">
                                     <h3><span>water</span> <strong>JD2.00</strong></h3>

@@ -10,8 +10,8 @@
                 <h2>Profile</h2>
             </div>
             <div class="col-12">
-                <a href="">Home</a>
-                <a href="">Profile</a>
+                <a href="{{ url('/') }}">Home</a>
+                <a href="#">Profile</a>
             </div>
         </div>
     </div>
@@ -171,7 +171,7 @@ $i=0;
                                     <form action="{{ url('/user-profile-delete/'.$table->pivot->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
+                                        <button type="submit" class="btn btn-danger">Cancel reservation</button>
                                     </form>
                                 </td>
                                      {{-- {{$count2=$count2+1}} --}}
