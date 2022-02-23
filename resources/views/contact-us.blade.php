@@ -23,7 +23,7 @@
                 <div class="section-header text-center">
                     <p>Contact Us</p>
                     @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show">
+    <div  style="width: 100%" class="alert alert-success alert-dismissible fade show">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
